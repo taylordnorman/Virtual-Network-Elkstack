@@ -38,24 +38,25 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump-Box-Provisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+76.115.149.31
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump-Box-Provisioner from 10.0.0.4 IP address.
+The Elk-vm can only be accessed by the Jump-Box-Provisioner at 40.78.6.158 and my local network at 76.115.149.31.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+Name                 | Publicly Accessible | Allowed IP Addresses                       |
+|----------------------|---------------------|------------------------------------------|
+| Jump-Box-Provisioner | Yes                 | 76.115.149.31 10.0.0.5 10.0.0.6 10.0.0.9 |
+| Elk-VM               | Yes                 | 76.115.149.31 40.78.6.158                |
+| Web-1                | No                  | 10.0.0.4                                 |
+| Web-2                | No                  | 10.0.0.4                                 |
+| Web-3                | No                  | 10.0.0.4                                 |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using Ansible allows you to create one playbook file that you can run on all machines to ensure each instance is identical. This allows automation when adding services to a system, ensures they are all identical, and saves on time by instantly adding to all systems at once.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
