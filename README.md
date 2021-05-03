@@ -59,20 +59,23 @@ Name                 | Publicly Accessible | Allowed IP Addresses               
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because using Ansible allows you to create one playbook file that you can run on all machines to ensure each instance is identical. This allows automation when adding services to a system, ensures they are all identical, and saves on time by instantly adding to all systems at once.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+
+- Install docker.io utilizes the apt command ensuring to get docker onto the container
+- Install docker module utilizes pip which is used to manage python library dependencies in this instance it checks that the state is present on docker, if not then it installs docker.
+- Install python3.pip is using apt get to install python3.pip from the repository if it is not already installed.
+- Download and launch a docker elk container uses docker container to manage the lifecycle of docker containers. Using image:sebp/elk:761 is used as a repository path to create the container if the image is not found and on the device.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Docker ps -a](Images/dockerps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - _TODO: List the IP addresses of the machines you are monitoring_
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Filebeat
+Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
