@@ -80,11 +80,10 @@ Filebeat
 Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 Filebeat collects file system logs, an example being server logs where you can see all activities performed on a specific server. This can include detailed information that allows you to know who, when and how your server is being accessed.
 
-Metricbeat
+Metricbeat helps to monitor metrics from the system and different services running on the server, such as Apache. This can be useful for seeing server uptime, requests per second, and many other status fields.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
